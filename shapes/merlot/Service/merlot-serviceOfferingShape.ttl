@@ -52,7 +52,7 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:path gax-trust-framework:dataAccountExport ],
         [ skos:example "'An ML service for training, deploying and improving image classifiers.'" ;
             sh:datatype xsd:string ;
-            sh:description "Eine Beschreibung in der natürlichen Sprache"@de,
+            sh:description "Beschreibung des Service Angebots in natürlicher Sprache"@de,
                 "A description in natural language"@en ;
             sh:maxCount 1 ;
             sh:name "Detaillierte Beschreibung des Services" ;
@@ -81,7 +81,7 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:order 9 ;
             sh:path gax-trust-framework:endpoint ],
         [ skos:example "'https://gaia-x.eu'" ;
-            sh:description "ID des Teilnehmers (Selbstdescription), das dieses Serviceangebot bereitstellt."@de,
+            sh:description "Teilnehmer, der dieses Service Angebot bereitstellt."@de,
                 "Id of Participant (self-descrription) providing this service offering."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -121,7 +121,7 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:order 13 ;
             sh:path gax-trust-framework:ServiceOfferingLocations ],
         [ skos:example "'https://gaia-x.eu'" ;
-            sh:description "Habe von Teilnehmern Selbstdescrription, der dieses Serviceangebot anbietet."@de,
+            sh:description "Telinehmer, der dieses Service Angebot veröffentlicht."@de,
                 "DID of participant self-descrription, who is offering this service offering."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -177,7 +177,7 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:path merlot:merlotTermsAndConditionsAccepted ],
         [ skos:example "'GenericServiceName'" ;
             sh:datatype xsd:string ;
-            sh:description "menschlicher lesbarer Name des Dienstangebots"@de,
+            sh:description "Menschenlesbarer Name des Service Angebots"@de,
                 "human readable name of the service offering"@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -241,7 +241,7 @@ gax-validation:EndpointShape a sh:NodeShape ;
     sh:targetClass gax-trust-framework:Endpoint .
 
 gax-validation:RuntimeShape a sh:NodeShape ;
-    sh:property [ skos:example "'https://gaia-x.eu'" ;
+    sh:property [ skos:example "'5'" ;
             sh:datatype xsd:number ;
             sh:description "Nummer-Teil der Laufzeit"@de,
                 "Number part of the runtime"@en ;

@@ -60,16 +60,7 @@ gax-validation:PhysicalServerShape a sh:NodeShape ;
     sh:targetClass gax-trust-framework:PhysicalServer .
 
 gax-validation:CPUShape a sh:NodeShape ;
-    sh:property [ skos:example "'x86', 'x86-64', 'RISC-V', 'Generic'" ;
-            sh:datatype xsd:string ;
-            sh:description "Grundlegende CPU -Architektur."@de,
-                "Basic CPU architecture."@en ;
-            sh:in ( "x86" "x86-64" "RISC-V" "Generic" ) ;
-            sh:maxCount 1 ;
-            sh:name "cpu architecture" ;
-            sh:order 1 ;
-            sh:path gax-trust-framework:cpuArchitecture ],
-        [ skos:example "'Skylake-Server-v4', 'Icelake-Server-v4', 'Cascadelake-Server-v4', 'EPYC-Milan-v1', 'EPYC-Rome-v2'" ;
+    sh:property [ skos:example "'Skylake-Server-v4', 'Icelake-Server-v4', 'Cascadelake-Server-v4', 'EPYC-Milan-v1', 'EPYC-Rome-v2'" ;
             sh:datatype xsd:string ;
             sh:description "CPU -Anweisungssatzgenerierung.Ermittelt grundlegende Merkmalssatz und Migrationskompatibilität."@de,
                 "CPU instruction set generation. Determines basic feature set and migration compatibility."@en ;
@@ -192,7 +183,16 @@ gax-validation:CPUShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:name "vendor" ;
             sh:order 2 ;
-            sh:path gax-trust-framework:vendor ] ;
+            sh:path gax-trust-framework:vendor ],
+        [ skos:example "'x86', 'x86-64', 'RISC-V', 'Generic'" ;
+            sh:datatype xsd:string ;
+            sh:description "Grundlegende CPU -Architektur."@de,
+                "Basic CPU architecture."@en ;
+            sh:in ( "x86" "x86-64" "RISC-V" "Generic" ) ;
+            sh:maxCount 1 ;
+            sh:name "cpu architecture" ;
+            sh:order 1 ;
+            sh:path gax-trust-framework:cpuArchitecture ] ;
     sh:targetClass gax-trust-framework:CPU .
 
 gax-validation:DiskShape a sh:NodeShape ;
@@ -271,7 +271,23 @@ gax-validation:EncryptionShape a sh:NodeShape ;
     sh:targetClass gax-trust-framework:Encryption .
 
 gax-validation:GPUShape a sh:NodeShape ;
-    sh:property [ skos:example "'PCIe Gen4: 64GB/s'" ;
+    sh:property [ skos:example "'Fermi', 'Kepler', 'Gen9'" ;
+            sh:datatype xsd:string ;
+            sh:description "GPU -Generation."@de,
+                "GPU generation."@en ;
+            sh:maxCount 1 ;
+            sh:name "gpu generation" ;
+            sh:order 1 ;
+            sh:path gax-trust-framework:gpuGeneration ],
+        [ skos:example "'a structure object of type Memory'" ;
+            sh:description "Erinnerung an die GPU"@de,
+                "Memory of the GPU"@en ;
+            sh:maxCount 1 ;
+            sh:name "memory" ;
+            sh:node gax-validation:MemoryShape ;
+            sh:order 2 ;
+            sh:path gax-trust-framework:memory ],
+        [ skos:example "'PCIe Gen4: 64GB/s'" ;
             sh:datatype xsd:string ;
             sh:description "Zusammenfassung der GPU"@de,
                 "Interconnection of the GPU"@en ;
@@ -295,23 +311,7 @@ gax-validation:GPUShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:name "vendor" ;
             sh:order 2 ;
-            sh:path gax-trust-framework:vendor ],
-        [ skos:example "'Fermi', 'Kepler', 'Gen9'" ;
-            sh:datatype xsd:string ;
-            sh:description "GPU -Generation."@de,
-                "GPU generation."@en ;
-            sh:maxCount 1 ;
-            sh:name "gpu generation" ;
-            sh:order 1 ;
-            sh:path gax-trust-framework:gpuGeneration ],
-        [ skos:example "'a structure object of type Memory'" ;
-            sh:description "Erinnerung an die GPU"@de,
-                "Memory of the GPU"@en ;
-            sh:maxCount 1 ;
-            sh:name "memory" ;
-            sh:node gax-validation:MemoryShape ;
-            sh:order 2 ;
-            sh:path gax-trust-framework:memory ] ;
+            sh:path gax-trust-framework:vendor ] ;
     sh:targetClass gax-trust-framework:GPU .
 
 gax-validation:MemoryShape a sh:NodeShape ;

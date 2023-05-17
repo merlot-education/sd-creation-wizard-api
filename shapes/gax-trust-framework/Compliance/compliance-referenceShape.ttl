@@ -35,7 +35,7 @@ gax-validation:ComplianceReferenceShape a sh:NodeShape ;
             sh:path gax-trust-framework:hasComplianceReferenceTitle ],
         [ skos:example "'Information security management system standards.'" ;
             sh:datatype xsd:string ;
-            sh:description "Eine Beschreibung in der natürlichen Sprache"@de,
+            sh:description "Beschreibung des Service Angebots in natürlicher Sprache"@de,
                 "A description in natural language"@en ;
             sh:maxCount 1 ;
             sh:name "has description" ;
