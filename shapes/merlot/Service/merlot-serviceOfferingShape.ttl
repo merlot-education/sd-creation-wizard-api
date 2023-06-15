@@ -19,29 +19,6 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:name "Erstelldatum" ;
             sh:order 1 ;
             sh:path merlot:creationDate ],
-        [ skos:example "'https://gaia-x.eu'" ;
-            sh:description "Eine auflösbare Verbindung zu den für diesen Dienst gelten Bedingungen."@de,
-                "a resolvable link to the Terms and Conditions applying to that service."@en ;
-            sh:minCount 1 ;
-            sh:name "Anbieter AGB" ;
-            sh:node gax-validation:TermsAndConditionsShape ;
-            sh:order 2 ;
-            sh:path gax-trust-framework:termsAndConditions ],
-        [ skos:example "' '" ;
-            sh:datatype xsd:string ;
-            sh:description "Eine Liste der Richtlinien, die unter Verwendung eines DSL (z. B. Rego oder ODRL) ausgedrückt wurden"@de,
-                "a list of policy expressed using a DSL (e.g., Rego or ODRL)"@en ;
-            sh:minCount 1 ;
-            sh:name "Richtlinie" ;
-            sh:order 3 ;
-            sh:path gax-trust-framework:policy ],
-        [ skos:example "'GDPR2016', 'LGPD2019'" ;
-            sh:datatype xsd:string ;
-            sh:description "Eine Liste von Datenschutzregime aus der unten verfügbaren Liste"@de,
-                "a list of data protection regime from the list available below"@en ;
-            sh:name "Datenschutzrichtlinie" ;
-            sh:order 4 ;
-            sh:path gax-trust-framework:dataProtectionRegime ],
         [ skos:example "' '" ;
             sh:description "Eine Liste von Methoden zum Exportieren von Daten aus dem Dienst"@de,
                 "a list of methods to export data out of the service"@en ;
@@ -96,16 +73,6 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 11 ;
             sh:path gax-trust-framework:aggregationOf ],
-        [ skos:example "'Download'" ;
-            sh:datatype xsd:string ;
-            sh:description "Datenzugriffsart"@de,
-                "Data Access Type"@en ;
-            sh:in ( "Download" "Compute to data" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Datenzugriffsart" ;
-            sh:order 2 ;
-            sh:path merlot:dataAccessType ],
         [ skos:example "'https://gaia-x.eu'" ;
             sh:datatype xsd:anyURI ;
             sh:description "Ein auflösbarer Link zum Dienst, der sich mit dem Dienst in Bezug auf den Dienst anbietet und der unabhängig davon existieren kann."@de,
@@ -129,6 +96,13 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path gax-core:offeredBy ],
+        [ skos:example "'http://example.com'" ;
+            sh:datatype xsd:string ;
+            sh:description "Anhänge"@de,
+                "Attachments"@en ;
+            sh:name "Anhänge" ;
+            sh:order 2 ;
+            sh:path merlot:attachments ],
         [ skos:example "'https://gaia-x.eu'" ;
             sh:description "Habe die Ressourcen-Selbstbeschreibung im Zusammenhang mit dem Dienst getan, und das kann unabhängig davon existieren."@de,
                 "DID of resource self-escription related to the service and that can exist independently of it."@en ;
@@ -143,20 +117,13 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
             sh:path gax-core:dependsOn ],
-        [ skos:example "'http://example.com'" ;
-            sh:datatype xsd:string ;
-            sh:description "Anhänge"@de,
-                "Attachments"@en ;
-            sh:name "Anhänge" ;
-            sh:order 3 ;
-            sh:path merlot:attachments ],
         [ skos:example "'1€ / Download'" ;
             sh:datatype xsd:string ;
             sh:description "Beispielkosten"@de,
                 "Example Costs"@en ;
             sh:maxCount 1 ;
             sh:name "Beispielkosten" ;
-            sh:order 4 ;
+            sh:order 3 ;
             sh:path merlot:exampleCosts ],
         [ skos:example "'1 hour(s)'" ;
             sh:description "Option für eine Laufzeit des Serviceangebots"@de,
@@ -164,7 +131,7 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Laufzeit-Option" ;
             sh:node gax-validation:RuntimeShape ;
-            sh:order 5 ;
+            sh:order 4 ;
             sh:path merlot:runtimeOption ],
         [ skos:example "'true'" ;
             sh:datatype xsd:boolean ;
@@ -173,7 +140,7 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Merlot AGB akzeptieren" ;
-            sh:order 6 ;
+            sh:order 5 ;
             sh:path merlot:merlotTermsAndConditionsAccepted ],
         [ skos:example "'GenericServiceName'" ;
             sh:datatype xsd:string ;
@@ -183,7 +150,30 @@ gax-validation:MerlotServiceOfferingShape a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Servicename" ;
             sh:order 1 ;
-            sh:path gax-trust-framework:name ] ;
+            sh:path gax-trust-framework:name ],
+        [ skos:example "'https://gaia-x.eu'" ;
+            sh:description "Eine auflösbare Verbindung zu den für diesen Dienst gelten Bedingungen."@de,
+                "a resolvable link to the Terms and Conditions applying to that service."@en ;
+            sh:minCount 1 ;
+            sh:name "Anbieter AGB" ;
+            sh:node gax-validation:TermsAndConditionsShape ;
+            sh:order 2 ;
+            sh:path gax-trust-framework:termsAndConditions ],
+        [ skos:example "' '" ;
+            sh:datatype xsd:string ;
+            sh:description "Eine Liste der Richtlinien, die unter Verwendung eines DSL (z. B. Rego oder ODRL) ausgedrückt wurden"@de,
+                "a list of policy expressed using a DSL (e.g., Rego or ODRL)"@en ;
+            sh:minCount 1 ;
+            sh:name "Richtlinie" ;
+            sh:order 3 ;
+            sh:path gax-trust-framework:policy ],
+        [ skos:example "'GDPR2016', 'LGPD2019'" ;
+            sh:datatype xsd:string ;
+            sh:description "Eine Liste von Datenschutzregime aus der unten verfügbaren Liste"@de,
+                "a list of data protection regime from the list available below"@en ;
+            sh:name "Datenschutzrichtlinie" ;
+            sh:order 4 ;
+            sh:path gax-trust-framework:dataProtectionRegime ] ;
     sh:targetClass merlot:MerlotServiceOffering .
 
 gax-validation:DataAccountExportShape a sh:NodeShape ;

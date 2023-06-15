@@ -92,7 +92,7 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 9 ;
             sh:path gax-trust-framework:subOrganization ],
-        [ skos:example "'BE-BRU'" ;
+        [ skos:example "'http://example.com/tnc'" ;
             sh:datatype xsd:string ;
             sh:description "Link zu den Allgemeinen Geschäftsbedingungen"@de,
                 "Terms and Conditions Link"@en ;
@@ -101,6 +101,33 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
             sh:name "Link zu den AGB" ;
             sh:order 4 ;
             sh:path merlot:termsConditionsLink ],
+        [ skos:example "'edc1234'" ;
+            sh:datatype xsd:string ;
+            sh:description "ID des EDC Connector für diese Organisation"@de,
+                "ID of the EDC Connector for this organization"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "connector id" ;
+            sh:order 5 ;
+            sh:path merlot:connectorId ],
+        [ skos:example "'-----BEGIN CERTIFICATE...'" ;
+            sh:datatype xsd:string ;
+            sh:description "Öffentlicher Schlüssel des EDC Connector für diese Organisation"@de,
+                "Public Key of the EDC Connector for this organization"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "connector public key" ;
+            sh:order 6 ;
+            sh:path merlot:connectorPublicKey ],
+        [ skos:example "'my.connector.url/my-path/'" ;
+            sh:datatype xsd:string ;
+            sh:description "Basis -URL des EDC Connectors für diese Organisation"@de,
+                "Base URL of the EDC Connector for this organization"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "connector base url" ;
+            sh:order 7 ;
+            sh:path merlot:connectorBaseUrl ],
         [ skos:example "'ACME L.L.C'" ;
             sh:datatype xsd:string ;
             sh:description "Rechtsbindender Name"@de,

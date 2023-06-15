@@ -18,6 +18,31 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:node gax-validation:DataExchangeCountShape ;
             sh:order 1 ;
             sh:path merlot:exchangeCountOption ],
+        [ skos:example "'1€ / Download'" ;
+            sh:datatype xsd:string ;
+            sh:description "Beispielkosten"@de,
+                "Example Costs"@en ;
+            sh:maxCount 1 ;
+            sh:name "Beispielkosten" ;
+            sh:order 3 ;
+            sh:path merlot:exampleCosts ],
+        [ skos:example "'1 hour(s)'" ;
+            sh:description "Option für eine Laufzeit des Serviceangebots"@de,
+                "Option for a runtime of the Service Offering"@en ;
+            sh:minCount 1 ;
+            sh:name "Laufzeit-Option" ;
+            sh:node gax-validation:RuntimeShape ;
+            sh:order 4 ;
+            sh:path merlot:runtimeOption ],
+        [ skos:example "'true'" ;
+            sh:datatype xsd:boolean ;
+            sh:description "Merlot Geschäftsbedingungen wurden gelesen und akzeptiert"@de,
+                "Merlot Terms and Conditions have been read and accepted"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Merlot AGB akzeptieren" ;
+            sh:order 5 ;
+            sh:path merlot:merlotTermsAndConditionsAccepted ],
         [ skos:example "'GenericServiceName'" ;
             sh:datatype xsd:string ;
             sh:description "Menschenlesbarer Name des Service Angebots"@de,
@@ -73,6 +98,16 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:name "Schlagwort" ;
             sh:order 7 ;
             sh:path dcat:keyword ],
+        [ skos:example "'Push'" ;
+            sh:datatype xsd:string ;
+            sh:description "Art der Datenübertragung"@de,
+                "Type of data transfer"@en ;
+            sh:in ( "Push" "Pull" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Typ des Datentransfers" ;
+            sh:order 2 ;
+            sh:path merlot:dataTransferType ],
         [ skos:example "'Hybrid', 'gax:PrivateProvisioning'" ;
             sh:datatype xsd:string ;
             sh:description "Bereitstellungsart des Dienstes"@de,
@@ -97,15 +132,6 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 10 ;
             sh:path gax-trust-framework:providedBy ],
-        [ skos:example "'01.01.2023'" ;
-            sh:datatype xsd:string ;
-            sh:description "Erstelldatum"@de,
-                "Creation Date"@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Erstelldatum" ;
-            sh:order 1 ;
-            sh:path merlot:creationDate ],
         [ skos:example "'https://gaia-x.eu'" ;
             sh:description "ID der Ressourcen (Selbstdeskrimpfung) im Zusammenhang mit dem Dienst und das kann unabhängig davon existieren."@de,
                 "Id of Resource (self-descrription) related to the service and that can exist independently of it."@en ;
@@ -158,40 +184,24 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Datenzugriffsart" ;
-            sh:order 2 ;
+            sh:order 3 ;
             sh:path merlot:dataAccessType ],
+        [ skos:example "'01.01.2023'" ;
+            sh:datatype xsd:string ;
+            sh:description "Erstelldatum"@de,
+                "Creation Date"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Erstelldatum" ;
+            sh:order 1 ;
+            sh:path merlot:creationDate ],
         [ skos:example "'http://example.com'" ;
             sh:datatype xsd:string ;
             sh:description "Anhänge"@de,
                 "Attachments"@en ;
             sh:name "Anhänge" ;
-            sh:order 3 ;
-            sh:path merlot:attachments ],
-        [ skos:example "'1€ / Download'" ;
-            sh:datatype xsd:string ;
-            sh:description "Beispielkosten"@de,
-                "Example Costs"@en ;
-            sh:maxCount 1 ;
-            sh:name "Beispielkosten" ;
-            sh:order 4 ;
-            sh:path merlot:exampleCosts ],
-        [ skos:example "'1 hour(s)'" ;
-            sh:description "Option für eine Laufzeit des Serviceangebots"@de,
-                "Option for a runtime of the Service Offering"@en ;
-            sh:minCount 1 ;
-            sh:name "Laufzeit-Option" ;
-            sh:node gax-validation:RuntimeShape ;
-            sh:order 5 ;
-            sh:path merlot:runtimeOption ],
-        [ skos:example "'true'" ;
-            sh:datatype xsd:boolean ;
-            sh:description "Merlot Geschäftsbedingungen wurden gelesen und akzeptiert"@de,
-                "Merlot Terms and Conditions have been read and accepted"@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Merlot AGB akzeptieren" ;
-            sh:order 6 ;
-            sh:path merlot:merlotTermsAndConditionsAccepted ] ;
+            sh:order 2 ;
+            sh:path merlot:attachments ] ;
     sh:targetClass merlot:MerlotServiceOfferingDataDelivery .
 
 gax-validation:DataAccountExportShape a sh:NodeShape ;
