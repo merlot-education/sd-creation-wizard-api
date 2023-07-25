@@ -196,23 +196,7 @@ gax-validation:CPUShape a sh:NodeShape ;
     sh:targetClass gax-trust-framework:CPU .
 
 gax-validation:DiskShape a sh:NodeShape ;
-    sh:property [ skos:example "'1600 GB'" ;
-            sh:description "Die Größe dieser Festplatte."@de,
-                "The size of that hard drive."@en ;
-            sh:maxCount 1 ;
-            sh:name "size" ;
-            sh:node gax-validation:MeasureShape ;
-            sh:order 1 ;
-            sh:path gax-trust-framework:size ],
-        [ skos:example "'local SSD', 'local HDD', 'shared network storage', 'high-perf NVMe'" ;
-            sh:datatype xsd:string ;
-            sh:description "Die Art dieser Festplatte."@de,
-                "The type of that hard drive."@en ;
-            sh:maxCount 1 ;
-            sh:name "type" ;
-            sh:order 2 ;
-            sh:path gax-trust-framework:type ],
-        [ skos:example "'(a strucctured object of type gax-trust-framework:Encryption)'" ;
+    sh:property [ skos:example "'(a strucctured object of type gax-trust-framework:Encryption)'" ;
             sh:description "Details der Festplattenverschlüsselung."@de,
                 "Details of disk ecryption."@en ;
             sh:maxCount 1 ;
@@ -244,7 +228,23 @@ gax-validation:DiskShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:name "vendor" ;
             sh:order 2 ;
-            sh:path gax-trust-framework:vendor ] ;
+            sh:path gax-trust-framework:vendor ],
+        [ skos:example "'1600 GB'" ;
+            sh:description "Die Größe dieser Festplatte."@de,
+                "The size of that hard drive."@en ;
+            sh:maxCount 1 ;
+            sh:name "size" ;
+            sh:node gax-validation:MeasureShape ;
+            sh:order 1 ;
+            sh:path gax-trust-framework:size ],
+        [ skos:example "'local SSD', 'local HDD', 'shared network storage', 'high-perf NVMe'" ;
+            sh:datatype xsd:string ;
+            sh:description "Die Art dieser Festplatte."@de,
+                "The type of that hard drive."@en ;
+            sh:maxCount 1 ;
+            sh:name "type" ;
+            sh:order 2 ;
+            sh:path gax-trust-framework:type ] ;
     sh:targetClass gax-trust-framework:Disk .
 
 gax-validation:EncryptionShape a sh:NodeShape ;

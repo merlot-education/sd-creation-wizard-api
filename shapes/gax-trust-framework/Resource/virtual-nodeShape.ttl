@@ -18,41 +18,6 @@ gax-validation:VirtualNodeShape a sh:NodeShape ;
             sh:order 1 ;
             sh:path gax-trust-framework:type ],
         [ skos:example "'https://gaia-x.eu'" ;
-            sh:description "Eine Ressource, in der die Instanz dieser virtuellen Ressource ausgeführt wird."@de,
-                "a resource where the instance of this virtual resource is being executed on."@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "hosted on" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path gax-trust-framework:hostedOn ],
-        [ skos:example "'https://gaia-x.eu'" ;
-            sh:description "Eine virtuelle Ressource (normalerweise eine Software -Ressource) Dieser Prozess ist eine Instanz."@de,
-                "A virtual resource (normally a software resource) this process is an instance of."@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "instance of" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path gax-trust-framework:instanceOf ],
-        [ skos:example "'https://gaia-x.eu'" ;
-            sh:description "Eine Liste des Teilnehmers mit vertraglicher Beziehung zur Ressource."@de,
-                "A list of participant with contractual relation with the resource."@en ;
-            sh:minCount 1 ;
-            sh:name "tenant owned by" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path gax-trust-framework:tenantOwnedBy ],
-        [ skos:example "'PD-SAP', 'PLME-SAP'" ;
-            sh:description "Eine Liste des Dienstzugriffspunkts"@de,
-                "a list of Service Access Point which can be an endpoint as a mean to access and interact with the resource"@en ;
-            sh:in ( "PD-SAP" "PLME-SAP" ) ;
-            sh:minCount 1 ;
-            sh:name "service access point" ;
-            sh:node gax-validation:ServiceAccessPointShape ;
-            sh:order 5 ;
-            sh:path gax-trust-framework:serviceAccessPoint ],
-        [ skos:example "'https://gaia-x.eu'" ;
             sh:description "Der als Gaia-X-Teilnehmer oder als andere Agent, möglicherweise auch als Person außerhalb von Gaia-X, angegebene Urheberrechtsbesitzer.Ein Urheberrechtsinhaber ist eine Person oder Organisation, die das Recht hat, die Ressource auszunutzen.Der Besitzer des Urheberrechts bezieht sich nicht auf den Autor der Ressource, der eine natürliche Person ist und sich vom Urheberrechtsinhaber unterscheidet.Eine einfache Namenszeichenfolge kann als leerer Knoten bezeichnet werden, dessen FOAF: -Namensattribut diesen Zeichenfolgenwert hat."@de,
                 "The copyright owner(s), given as a Gaia-X Participant or as some other agent, possibly also a person outside of Gaia-X. A copyright owner is a person or organization, that has the right to exploit the resource. Copyright owner does not necessary refer to the author of the resource, who is a natural person and may differ from copyright owner. A simple name string can be referenced as a blank node whose foaf:name attribute has that string value."@en ;
             sh:minCount 1 ;
@@ -157,7 +122,42 @@ gax-validation:VirtualNodeShape a sh:NodeShape ;
             sh:name "maintained by" ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
-            sh:path gax-trust-framework:maintainedBy ] ;
+            sh:path gax-trust-framework:maintainedBy ],
+        [ skos:example "'https://gaia-x.eu'" ;
+            sh:description "Eine Ressource, in der die Instanz dieser virtuellen Ressource ausgeführt wird."@de,
+                "a resource where the instance of this virtual resource is being executed on."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "hosted on" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path gax-trust-framework:hostedOn ],
+        [ skos:example "'https://gaia-x.eu'" ;
+            sh:description "Eine virtuelle Ressource (normalerweise eine Software -Ressource) Dieser Prozess ist eine Instanz."@de,
+                "A virtual resource (normally a software resource) this process is an instance of."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "instance of" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path gax-trust-framework:instanceOf ],
+        [ skos:example "'https://gaia-x.eu'" ;
+            sh:description "Eine Liste des Teilnehmers mit vertraglicher Beziehung zur Ressource."@de,
+                "A list of participant with contractual relation with the resource."@en ;
+            sh:minCount 1 ;
+            sh:name "tenant owned by" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path gax-trust-framework:tenantOwnedBy ],
+        [ skos:example "'PD-SAP', 'PLME-SAP'" ;
+            sh:description "Eine Liste des Dienstzugriffspunkts"@de,
+                "a list of Service Access Point which can be an endpoint as a mean to access and interact with the resource"@en ;
+            sh:in ( "PD-SAP" "PLME-SAP" ) ;
+            sh:minCount 1 ;
+            sh:name "service access point" ;
+            sh:node gax-validation:ServiceAccessPointShape ;
+            sh:order 5 ;
+            sh:path gax-trust-framework:serviceAccessPoint ] ;
     sh:targetClass gax-trust-framework:VirtualNode .
 
 gax-validation:AgentShape a sh:NodeShape ;

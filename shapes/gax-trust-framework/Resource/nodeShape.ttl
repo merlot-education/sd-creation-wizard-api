@@ -180,23 +180,7 @@ gax-validation:CPUShape a sh:NodeShape ;
     sh:targetClass gax-trust-framework:CPU .
 
 gax-validation:DiskShape a sh:NodeShape ;
-    sh:property [ skos:example "'(a strucctured object of type gax-trust-framework:Encryption)'" ;
-            sh:description "Details der Festplattenverschlüsselung."@de,
-                "Details of disk ecryption."@en ;
-            sh:maxCount 1 ;
-            sh:name "encryption" ;
-            sh:node gax-validation:EncryptionShape ;
-            sh:order 3 ;
-            sh:path gax-trust-framework:encryption ],
-        [ skos:example "'managed', 'bring-your-own-key', ' hold-your-own-key'" ;
-            sh:datatype xsd:string ;
-            sh:description "Schlüsselverwaltungsmethode definieren.'Managed': Tasten werden von Key Manager von Cloud erstellt und gespeichert.'Bring-your-Own-Key' :: Keys, die vom Benutzer erstellt und im Key Manager von Cloud gespeichert sind.'Hold-Your-Own-Key': Schlüssel, der vom Benutzer erstellt und vom Benutzer aufbewahrt wird"@de,
-                "Define key management method. 'managed': Keys are created by and stored in key manager of cloud. 'bring-your-own-key': : Keys created by user and stored in key manager of cloud. 'hold-your-own-key': Key created by user and kept by user"@en ;
-            sh:minCount 1 ;
-            sh:name "key management" ;
-            sh:order 4 ;
-            sh:path gax-trust-framework:keyManagement ],
-        [ skos:example "'Xeon Platinum 8280'" ;
+    sh:property [ skos:example "'Xeon Platinum 8280'" ;
             sh:datatype xsd:string ;
             sh:description "Produktname der Hardware -Ressource."@de,
                 "Procuct name of the hardware resource."@en ;
@@ -228,7 +212,23 @@ gax-validation:DiskShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:name "type" ;
             sh:order 2 ;
-            sh:path gax-trust-framework:type ] ;
+            sh:path gax-trust-framework:type ],
+        [ skos:example "'(a strucctured object of type gax-trust-framework:Encryption)'" ;
+            sh:description "Details der Festplattenverschlüsselung."@de,
+                "Details of disk ecryption."@en ;
+            sh:maxCount 1 ;
+            sh:name "encryption" ;
+            sh:node gax-validation:EncryptionShape ;
+            sh:order 3 ;
+            sh:path gax-trust-framework:encryption ],
+        [ skos:example "'managed', 'bring-your-own-key', ' hold-your-own-key'" ;
+            sh:datatype xsd:string ;
+            sh:description "Schlüsselverwaltungsmethode definieren.'Managed': Tasten werden von Key Manager von Cloud erstellt und gespeichert.'Bring-your-Own-Key' :: Keys, die vom Benutzer erstellt und im Key Manager von Cloud gespeichert sind.'Hold-Your-Own-Key': Schlüssel, der vom Benutzer erstellt und vom Benutzer aufbewahrt wird"@de,
+                "Define key management method. 'managed': Keys are created by and stored in key manager of cloud. 'bring-your-own-key': : Keys created by user and stored in key manager of cloud. 'hold-your-own-key': Key created by user and kept by user"@en ;
+            sh:minCount 1 ;
+            sh:name "key management" ;
+            sh:order 4 ;
+            sh:path gax-trust-framework:keyManagement ] ;
     sh:targetClass gax-trust-framework:Disk .
 
 gax-validation:EncryptionShape a sh:NodeShape ;
