@@ -10,15 +10,17 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 gax-validation:MerlotServiceOfferingCooperationShape a sh:NodeShape ;
-    sh:property [ skos:example "'01.01.2023'" ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+    sh:property 
+        # gaia-x
+        [ skos:example "'GDPR2016', 'LGPD2019'" ;
             sh:datatype xsd:string ;
-            sh:description "Erstelldatum"@de,
-                "Creation Date"@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Erstelldatum" ;
-            sh:order 1 ;
-            sh:path merlot:creationDate ],
+            sh:description "Eine Liste von Datenschutzregime aus der unten verfügbaren Liste"@de,
+                "a list of data protection regime from the list available below"@en ;
+            sh:name "Datenschutzrichtlinie" ;
+            sh:order 4 ;
+            sh:path gax-trust-framework:dataProtectionRegime ],
         [ skos:example "' '" ;
             sh:description "Eine Liste von Methoden zum Exportieren von Daten aus dem Dienst"@de,
                 "a list of methods to export data out of the service"@en ;
@@ -96,13 +98,6 @@ gax-validation:MerlotServiceOfferingCooperationShape a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path gax-core:offeredBy ],
-        [ skos:example "'http://example.com'" ;
-            sh:datatype xsd:string ;
-            sh:description "Anhänge"@de,
-                "Attachments"@en ;
-            sh:name "Anhänge" ;
-            sh:order 2 ;
-            sh:path merlot:attachments ],
         [ skos:example "'https://gaia-x.eu'" ;
             sh:description "Habe die Ressourcen-Selbstbeschreibung im Zusammenhang mit dem Dienst getan, und das kann unabhängig davon existieren."@de,
                 "DID of resource self-escription related to the service and that can exist independently of it."@en ;
@@ -117,32 +112,7 @@ gax-validation:MerlotServiceOfferingCooperationShape a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
             sh:path gax-core:dependsOn ],
-        [ skos:example "'1€ / Download'" ;
-            sh:datatype xsd:string ;
-            sh:description "Beispielkosten"@de,
-                "Example Costs"@en ;
-            sh:maxCount 1 ;
-            sh:name "Beispielkosten" ;
-            sh:order 3 ;
-            sh:path merlot:exampleCosts ],
-        [ skos:example "'1 hour(s)'" ;
-            sh:description "Option für eine Laufzeit des Serviceangebots"@de,
-                "Option for a runtime of the Service Offering"@en ;
-            sh:minCount 1 ;
-            sh:name "Laufzeit-Option" ;
-            sh:node gax-validation:RuntimeShape ;
-            sh:order 4 ;
-            sh:path merlot:runtimeOption ],
-        [ skos:example "'true'" ;
-            sh:datatype xsd:boolean ;
-            sh:description "Merlot Geschäftsbedingungen wurden gelesen und akzeptiert"@de,
-                "Merlot Terms and Conditions have been read and accepted"@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Merlot AGB akzeptieren" ;
-            sh:order 5 ;
-            sh:path merlot:merlotTermsAndConditionsAccepted ],
-        [ skos:example "'GenericServiceName'" ;
+    	[ skos:example "'GenericServiceName'" ;
             sh:datatype xsd:string ;
             sh:description "Menschenlesbarer Name des Service Angebots"@de,
                 "human readable name of the service offering"@en ;
@@ -166,18 +136,68 @@ gax-validation:MerlotServiceOfferingCooperationShape a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Richtlinie" ;
             sh:order 3 ;
-            sh:path gax-trust-framework:policy ],
-        [ skos:example "'GDPR2016', 'LGPD2019'" ;
+            sh:path gax-trust-framework:policy ],        
+
+        # merlot service offering
+        [ skos:example "'01.01.2023'" ;
             sh:datatype xsd:string ;
-            sh:description "Eine Liste von Datenschutzregime aus der unten verfügbaren Liste"@de,
-                "a list of data protection regime from the list available below"@en ;
-            sh:name "Datenschutzrichtlinie" ;
-            sh:order 4 ;
-            sh:path gax-trust-framework:dataProtectionRegime ] ;
+            sh:description "Erstelldatum"@de,
+                "Creation Date"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Erstelldatum" ;
+            sh:order 1 ;
+            sh:path merlot:creationDate ],
+        [ skos:example "'http://example.com'" ;
+            sh:datatype xsd:string ;
+            sh:description "Anhänge"@de,
+                "Attachments"@en ;
+            sh:name "Anhänge" ;
+            sh:order 2 ;
+            sh:path merlot:attachments ],
+        [ skos:example "'1€ / Download'" ;
+            sh:datatype xsd:string ;
+            sh:description "Beispielkosten"@de,
+                "Example Costs"@en ;
+            sh:maxCount 1 ;
+            sh:name "Beispielkosten" ;
+            sh:order 3 ;
+            sh:path merlot:exampleCosts ],
+        [ skos:example "'true'" ;
+            sh:datatype xsd:boolean ;
+            sh:description "Merlot Geschäftsbedingungen wurden gelesen und akzeptiert"@de,
+                "Merlot Terms and Conditions have been read and accepted"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+			sh:hasValue true ;
+            sh:name "Merlot AGB akzeptieren" ;
+            sh:order 6 ;
+            sh:path merlot:merlotTermsAndConditionsAccepted ],
+		[ skos:example "'1 hour(s)'" ;
+			sh:description "Option für eine Laufzeit des Serviceangebots"@de,
+				"Option for a runtime of the Service Offering"@en ;
+			sh:name "Laufzeit-Option" ;
+			sh:datatype gax-validation:Runtime;
+			sh:node gax-validation:RuntimeShape ;
+			sh:order 4 ;
+			sh:path merlot:runtimeOption ],
+		[ skos:example "'true'" ;
+			sh:datatype xsd:boolean ;
+			sh:description "Unbegrenzte Laufzeit als Option zulassen."@de,
+				"Allow unlimited runtime as an option."@en ;
+			sh:maxCount 1 ;
+			sh:hasValue true ;
+			sh:name "Unbegrenzte Laufzeit als Option zulassen" ;
+			sh:order 5 ;
+			sh:path merlot:runtimeUnlimited ] ;
     sh:targetClass merlot:MerlotServiceOfferingCooperation .
 
+# gaia-x
 gax-validation:DataAccountExportShape a sh:NodeShape ;
-    sh:property [ skos:example "'API', 'email', 'webform', 'unregisteredLetter'" ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+    sh:property 
+        [ skos:example "'API', 'email', 'webform', 'unregisteredLetter'" ;
             sh:datatype xsd:string ;
             sh:description "Das Mittelwert zur Anfrage von Datenabrufen: API, E -Mail, Webform, UnregisteredLetter, Registrierter, SupportCenter."@de,
                 "the mean to request data retrieval: API, email, webform, unregisteredLetter, registeredLetter, supportCenter."@en ;
@@ -207,7 +227,10 @@ gax-validation:DataAccountExportShape a sh:NodeShape ;
     sh:targetClass gax-trust-framework:DataAccountExport .
 
 gax-validation:EndpointShape a sh:NodeShape ;
-    sh:property [ skos:example "'https://gaia-x.eu/'" ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+    sh:property 
+        [ skos:example "'https://gaia-x.eu/'" ;
             sh:datatype xsd:anyURI ;
             sh:description "Auf die URL des Endpunkts, auf den er zugegriffen werden kann"@de,
                 "The URL of the endpoint where it can be accessed"@en ;
@@ -230,36 +253,11 @@ gax-validation:EndpointShape a sh:NodeShape ;
             sh:path gax-trust-framework:endpointDescription ] ;
     sh:targetClass gax-trust-framework:Endpoint .
 
-gax-validation:RuntimeShape a sh:NodeShape ;
-    sh:property [ skos:example "'5'" ;
-            sh:datatype xsd:number ;
-            sh:description "Nummer-Teil der Laufzeit"@de,
-                "Number part of the runtime"@en ;
-            sh:maxCount 1 ;
-            sh:name "Anzahl-Teil der Laufzeit" ;
-            sh:order 1 ;
-            sh:path merlot:runtimeCount ],
-        [ skos:example "'Measurement part of the runtime'" ;
-            sh:datatype xsd:string ;
-            sh:description "SHA256 Hash des obigen Dokuments."@de,
-                "sha256 hash of the above document."@en ;
-            sh:in ( "hour(s)" "day(s)" "week(s)" "month(s)" "year(s)" ) ;
-            sh:maxCount 1 ;
-            sh:name "Maß-Teil der Laufzeit" ;
-            sh:order 2 ;
-            sh:path merlot:runtimeMeasurement ],
-        [ skos:example "'true'" ;
-            sh:datatype xsd:boolean ;
-            sh:description "Mache die Laufzeit unbegrenzt."@de,
-                "Make the runtime unlimited."@en ;
-            sh:maxCount 1 ;
-            sh:name "Unbegrenzte Laufzeit" ;
-            sh:order 3 ;
-            sh:path merlot:runtimeUnlimited ] ;
-    sh:targetClass merlot:Runtime .
-
 gax-validation:StandardShape a sh:NodeShape ;
-    sh:property [ skos:example "'ISO10303-242:2014'" ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+    sh:property 
+        [ skos:example "'ISO10303-242:2014'" ;
             sh:datatype xsd:string ;
             sh:description "Name des Standards."@de,
                 "Name of the standard."@en ;
@@ -287,7 +285,10 @@ gax-validation:StandardShape a sh:NodeShape ;
     sh:targetClass gax-trust-framework:Standard .
 
 gax-validation:TermsAndConditionsShape a sh:NodeShape ;
-    sh:property [ skos:example "'https://gaia-x.eu'" ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+    sh:property 
+        [ skos:example "'https://gaia-x.eu'" ;
             sh:datatype xsd:anyURI ;
             sh:description "Ein auflösbarer Link zum Dokument"@de,
                 "a resolvable link to document"@en ;
@@ -306,4 +307,30 @@ gax-validation:TermsAndConditionsShape a sh:NodeShape ;
             sh:order 2 ;
             sh:path gax-trust-framework:hash ] ;
     sh:targetClass gax-trust-framework:TermsAndConditions .
+
+# merlot service offering
+gax-validation:RuntimeShape a sh:NodeShape ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+    sh:property 
+        [ skos:example "'5'" ;
+            sh:datatype xsd:number ;
+            sh:description "Nummer-Teil der Laufzeit"@de,
+                "Number part of the runtime"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Anzahl-Teil der Laufzeit" ;
+            sh:order 1 ;
+            sh:path merlot:runtimeCount ],
+        [ skos:example "'hour(s)'" ;
+            sh:datatype xsd:string ;
+            sh:description "Measurement part of the runtime"@de,
+                "Measurement part of the runtime"@en ;
+            sh:in ( "hour(s)" "day(s)" "week(s)" "month(s)" "year(s)" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Maß-Teil der Laufzeit" ;
+            sh:order 2 ;
+            sh:path merlot:runtimeMeasurement ] ;
+    sh:targetClass merlot:Runtime .
 
