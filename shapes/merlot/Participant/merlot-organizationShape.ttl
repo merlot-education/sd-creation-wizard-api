@@ -8,33 +8,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 gax-validation:MerlotOrganizationShape a sh:NodeShape ;
-    sh:property [ skos:example "'ACME'" ;
-            sh:datatype xsd:string ;
-            sh:description "Kurzer Organisationsname"@de,
-                "Short Organization Name"@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Name der Organisation" ;
-            sh:order 1 ;
-            sh:path merlot:orgaName ],
-        [ skos:example "'1234'" ;
-            sh:datatype xsd:string ;
-            sh:description "Merlot ID."@de,
-                "Merlot ID."@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "MERLOT ID" ;
-            sh:order 2 ;
-            sh:path merlot:merlotId ],
-        [ skos:example "'BE-BRU'" ;
-            sh:datatype xsd:string ;
-            sh:description "Adresscode."@de,
-                "Address Code."@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Adresscode" ;
-            sh:order 3 ;
-            sh:path merlot:addressCode ],
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+    sh:property 
+        # gaia-x
         [ skos:example "'A company making everything'" ;
             sh:datatype xsd:string ;
             sh:description "Textbeschreibung dieser Organisation."@de,
@@ -92,15 +69,6 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 9 ;
             sh:path gax-trust-framework:subOrganization ],
-        [ skos:example "'http://example.com/tnc'" ;
-            sh:datatype xsd:string ;
-            sh:description "Link zu den Allgemeinen Geschäftsbedingungen"@de,
-                "Terms and Conditions Link"@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Link zu den AGB" ;
-            sh:order 4 ;
-            sh:path merlot:termsConditionsLink ],
         [ skos:example "'ACME L.L.C'" ;
             sh:datatype xsd:string ;
             sh:description "Rechtsbindender Name"@de,
@@ -117,11 +85,52 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:name "legal form" ;
             sh:order 2 ;
-            sh:path gax-trust-framework:legalForm ] ;
+            sh:path gax-trust-framework:legalForm ],
+        # merlot
+        [ skos:example "'ACME'" ;
+            sh:datatype xsd:string ;
+            sh:description "Kurzer Organisationsname"@de,
+                "Short Organization Name"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Name der Organisation" ;
+            sh:order 1 ;
+            sh:path merlot:orgaName ],
+        [ skos:example "'1234'" ;
+            sh:datatype xsd:string ;
+            sh:description "Merlot ID."@de,
+                "Merlot ID."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "MERLOT ID" ;
+            sh:order 2 ;
+            sh:path merlot:merlotId ],
+        [ skos:example "'BE-BRU'" ;
+            sh:datatype xsd:string ;
+            sh:description "Adresscode."@de,
+                "Address Code."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Adresscode" ;
+            sh:order 3 ;
+            sh:path merlot:addressCode ],
+        [ skos:example "'http://example.com/tnc'" ;
+            sh:datatype xsd:string ;
+            sh:description "Link zu den Allgemeinen Geschäftsbedingungen"@de,
+                "Terms and Conditions Link"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Link zu den AGB" ;
+            sh:order 4 ;
+            sh:path merlot:termsConditionsLink ] ;
     sh:targetClass merlot:MerlotOrganization .
 
+# gaia-x
 gax-validation:RegistrationNumberShape a sh:NodeShape ;
-    sh:property [ skos:example "'HRA 12345', '123456789'" ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+    sh:property 
+        [ skos:example "'HRA 12345', '123456789'" ;
             sh:datatype xsd:string ;
             sh:description "Der staatlich erteilte Unternehmensnummer."@de,
                 "The state issued company number."@en ;
@@ -164,7 +173,10 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
     sh:targetClass gax-trust-framework:RegistrationNumber .
 
 gax-validation:AddressShape a sh:NodeShape ;
-    sh:property [ skos:example "'DE', 'DEU'" ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+    sh:property 
+        [ skos:example "'DE', 'DEU'" ;
             sh:datatype xsd:string ;
             sh:description "Physischer Standort des Kopfquartals in ISO 3166-1 Alpha2, Alpha-3 oder numerisches Format."@de,
                 "Physical location of head quarter in ISO 3166-1 alpha2, alpha-3 or numeric format."@en ;
