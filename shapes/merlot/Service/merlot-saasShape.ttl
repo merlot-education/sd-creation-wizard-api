@@ -173,23 +173,14 @@ gax-validation:MerlotServiceOfferingSaaSShape a sh:NodeShape ;
             sh:name "Merlot AGB akzeptieren" ;
             sh:order 6 ;
             sh:path merlot:merlotTermsAndConditionsAccepted ],
-		[ skos:example "'1 hour(s)'" ;
-			sh:description "Option für eine Laufzeit des Serviceangebots"@de,
-				"Option for a runtime of the Service Offering"@en ;
-			sh:name "Laufzeit-Option" ;
-			sh:datatype gax-validation:Runtime;
-			sh:node gax-validation:RuntimeShape ;
-			sh:order 4 ;
-			sh:path merlot:runtimeOption ],
-		[ skos:example "'true'" ;
-			sh:datatype xsd:boolean ;
-			sh:description "Unbegrenzte Laufzeit als Option zulassen."@de,
-				"Allow unlimited runtime as an option."@en ;
-			sh:maxCount 1 ;
-			sh:hasValue true ;
-			sh:name "Unbegrenzte Laufzeit als Option zulassen" ;
-			sh:order 5 ;
-			sh:path merlot:runtimeUnlimited ],
+        [ skos:example "'1 hour(s)'" ;
+                sh:description "Option für eine Laufzeit des Serviceangebots"@de,
+                    "Option for a runtime of the Service Offering"@en ;
+                sh:name "Laufzeit-Option" ;
+                sh:minCount 1 ;
+                sh:node gax-validation:RuntimeShape ;
+                sh:order 4 ;
+                sh:path merlot:runtimeOption ],
         # merlot saas offering
         [ skos:example "'Intel Core i7'" ;
             sh:datatype xsd:string ;
@@ -199,24 +190,14 @@ gax-validation:MerlotServiceOfferingSaaSShape a sh:NodeShape ;
             sh:name "Anforderungen an die Hardware" ;
             sh:order 1 ;
             sh:path merlot:hardwareRequirements ],
-		[   skos:example "'up to 5'" ;
-			sh:description "Option für die zulässige Anzahl von Benutzern der Software"@de,
-				"Option for allowed count of users for the software"@en ;
-			sh:name "Nutzeranzahl-Option" ;
-			sh:node gax-validation:AllowedUserCountShape ;
-			sh:order 2 ;
-			sh:path merlot:userCountOption 
-		],
-		[   skos:example "'true'" ;
-			sh:datatype xsd:boolean ;
-			sh:description "Unbegrenzte Anzahl von Benutzern als Option zulassen."@de,
-				"Allow unlimited number of users as an option."@en ;
-			sh:maxCount 1 ;
-			sh:hasValue true ;
-			sh:name "Unbegrenzte Nutzerzahl als Option zulassen" ;
-			sh:order 3 ;
-			sh:path merlot:userCountUnlimited
-		] ;
+        [   skos:example "'up to 5'" ;
+            sh:description "Option für die zulässige Anzahl von Benutzern der Software"@de,
+                "Option for allowed count of users for the software"@en ;
+            sh:name "Nutzeranzahl-Option" ;
+            sh:node gax-validation:AllowedUserCountShape ;
+            sh:order 2 ;
+            sh:minCount 1 ;
+            sh:path merlot:userCountOption ] ;
     sh:targetClass merlot:MerlotServiceOfferingSaaS .
 
 # gaia-x
@@ -342,8 +323,8 @@ gax-validation:RuntimeShape a sh:NodeShape ;
     sh:property 
         [ skos:example "'5'" ;
             sh:datatype xsd:number ;
-            sh:description "Nummer-Teil der Laufzeit"@de,
-                "Number part of the runtime"@en ;
+            sh:description "Anzahl-Teil der Laufzeit. Auf 0 setzen für 'unbegrenzt'."@de,
+                "Number part of the runtime. Set to 0 for 'unlimited'."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Anzahl-Teil der Laufzeit" ;
@@ -353,7 +334,7 @@ gax-validation:RuntimeShape a sh:NodeShape ;
             sh:datatype xsd:string ;
             sh:description "Measurement part of the runtime"@de,
                 "Measurement part of the runtime"@en ;
-            sh:in ( "hour(s)" "day(s)" "week(s)" "month(s)" "year(s)" ) ;
+            sh:in ( "hour(s)" "day(s)" "week(s)" "month(s)" "year(s)" "unlimited" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Maß-Teil der Laufzeit" ;
@@ -368,8 +349,8 @@ gax-validation:AllowedUserCountShape a sh:NodeShape ;
     sh:property 
         [ skos:example "'5'" ;
             sh:datatype xsd:number ;
-            sh:description "Zulässige Anzahl der Benutzer."@de,
-                "Number of users up to which the usage is allowed."@en ;
+            sh:description "Zulässige Anzahl der Benutzer. Auf 0 setzen für 'unbegrenzt'."@de,
+                "Number of users up to which the usage is allowed. Set to 0 for 'unlimited'."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Option für maximale Nutzerzahl" ;
