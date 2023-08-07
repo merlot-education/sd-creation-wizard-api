@@ -197,7 +197,7 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:in ( "Push" "Pull" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "Typ des Datentransfers" ;
+            sh:name "Datentransferart" ;
             sh:order 3 ;
             sh:path merlot:dataTransferType ],
         [ skos:example "'Download'" ;
