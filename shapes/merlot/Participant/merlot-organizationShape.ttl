@@ -116,13 +116,22 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
             sh:path merlot:addressCode ],
         [ skos:example "'http://example.com/tnc'" ;
             sh:datatype xsd:string ;
-            sh:description "Link zu den Allgemeinen Geschäftsbedingungen"@de,
-                "Terms and Conditions Link"@en ;
+            sh:description "Mail-Adresse der Organisation"@de,
+                "Mail address of the organization"@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "Link zu den AGB" ;
+            sh:name "Mail-Adresse" ;
             sh:order 4 ;
-            sh:path merlot:termsConditionsLink ] ;
+            sh:path merlot:mailAddress ],
+        [ skos:example "'https://gaia-x.eu'" ;
+            sh:description "Eine auflösbare Verbindung zu den für diesen Dienst gelten Bedingungen."@de,
+                "a resolvable link to the Terms and Conditions applying to that service."@en ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "Anbieter AGB" ;
+            sh:node gax-validation:TermsAndConditionsShape ;
+            sh:order 5 ;
+            sh:path gax-trust-framework:termsAndConditions ] ;
     sh:targetClass merlot:MerlotOrganization .
 
 # gaia-x
@@ -215,4 +224,28 @@ gax-validation:AddressShape a sh:NodeShape ;
             sh:order 5 ;
             sh:path vcard:locality ] ;
     sh:targetClass vcard:Address .
+
+gax-validation:TermsAndConditionsShape a sh:NodeShape ;
+    sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+    sh:property 
+        [ skos:example "'https://gaia-x.eu'" ;
+            sh:datatype xsd:anyURI ;
+            sh:description "Ein auflösbarer Link zum Dokument"@de,
+                "a resolvable link to document"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Link zum Inhalt" ;
+            sh:order 1 ;
+            sh:path gax-trust-framework:content ],
+        [ skos:example "'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'" ;
+            sh:datatype xsd:string ;
+            sh:description "SHA256 Hash des obigen Dokuments."@de,
+                "sha256 hash of the above document."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Hash des Dokuments" ;
+            sh:order 2 ;
+            sh:path gax-trust-framework:hash ] ;
+    sh:targetClass gax-trust-framework:TermsAndConditions .
 
