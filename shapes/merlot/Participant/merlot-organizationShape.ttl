@@ -21,11 +21,11 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
             sh:order 3 ;
             sh:path gax-trust-framework:description ],
         [ skos:example "'(a structured object which contains the registration number in at least one valid format))'" ;
-            sh:description "Die Registrierungsnummer des Landes, die eine bestimmte Einheit identifiziert.Gültige Formate sind lokal, EUID, EORI, VATID, Leicode."@de,
+            sh:description "Die Registrierungsnummer des Landes, die eine bestimmte Einheit identifiziert. Gültige Formate sind lokal, EUID, EORI, VATID, Leicode."@de,
                 "Country’s registration number which identifies one specific entity. Valid formats are local, EUID, EORI, vatID, leiCode."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "registration number" ;
+            sh:name "Registrierungsnummer" ;
             sh:node gax-validation:RegistrationNumberShape ;
             sh:order 4 ;
             sh:path gax-trust-framework:registrationNumber ],
@@ -34,16 +34,16 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
                 "The full legal address of the organization."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "legal address" ;
+            sh:name "Rechtsbindende Adresse" ;
             sh:node gax-validation:AddressShape ;
             sh:order 5 ;
             sh:path gax-trust-framework:legalAddress ],
         [ skos:example "'(a structured object which has the attribute country as mandatory attribute and some other optional attributes e.g., the attributes vcard:street-address,vcard:locality and vcard:country-name)'" ;
-            sh:description "Die vollständige Rechtsadresse der Organisation."@de,
+            sh:description "Die vollständige Adresse des Hauptsitzes der Organisation."@de,
                 "The full legal address of the organization."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "headquarter address" ;
+            sh:name "Hauptsitz-Adresse" ;
             sh:node gax-validation:AddressShape ;
             sh:order 6 ;
             sh:path gax-trust-framework:headquarterAddress ],
@@ -74,7 +74,7 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
             sh:description "Rechtsbindender Name"@de,
                 "Legally binding name"@en ;
             sh:maxCount 1 ;
-            sh:name "legal name" ;
+            sh:name "Rechtsbindender Name" ;
             sh:order 1 ;
             sh:path gax-trust-framework:legalName ],
         [ skos:example "'L.L.C, GmbH'" ;
@@ -83,7 +83,7 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
                 "Legal form"@en ;
             sh:in ( "LLC" "Corporation" "Limited partnership (LP)" "Nonprofit corporation" "Gesellschaft mit beschränkter Haftung (GmbH)" "Aktiengesellschaft (AG)" "Einzelunternehmen" "Gesellschaft bürgerlichen Rechts (GbR)" "Offene Handelsgesellschaft (OHG)" "Kommanditgesellschaft (KG)" "Unternehmergesellschaft (haftungsbeschränkt)" "Sole Trader" "Unincorporated Association" "Partnership" "Limited Partnership" "Trust" "Limited Company" "Limited Liability Partnership (LLP)" "Community Interest Company (CIC)" "Charitable Incorporated Organisation (CIO)" "Co-operative Society (Co-op)" "Community Benefit Society (BenCom)" "other" ) ;
             sh:maxCount 1 ;
-            sh:name "legal form" ;
+            sh:name "Rechtsform" ;
             sh:order 2 ;
             sh:path gax-trust-framework:legalForm ],
         # merlot
@@ -144,7 +144,7 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
             sh:description "Der staatlich erteilte Unternehmensnummer."@de,
                 "The state issued company number."@en ;
             sh:maxCount 1 ;
-            sh:name "local" ;
+            sh:name "Lokal" ;
             sh:order 1 ;
             sh:path gax-trust-framework:local ],
         [ skos:example "'DEB1234.HRB123123', 'FR1234.123456789'" ;
@@ -152,7 +152,7 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
             sh:description "Die European Unique Identifier (EUID) für Unternehmen im Europäischen Wirtschaftsgebiet, Island, Liechtenstein oder Norwegen und registriert im Business Registers Interconnection System (BRIS).Diese Zahl finden Sie über das EU Business Registers -Portal."@de,
                 "The European Unique Identifier (EUID) for business located in the European Economic Area, Iceland, Liechtenstein or Norway and registered in the Business Registers Interconnection System (BRIS). This number can be found via the EU Business registers portal."@en ;
             sh:maxCount 1 ;
-            sh:name " e u i d" ;
+            sh:name "EUID" ;
             sh:order 2 ;
             sh:path gax-trust-framework:EUID ],
         [ skos:example "'DE123456789101112', 'FR123456789101112'" ;
@@ -160,7 +160,7 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
             sh:description "Die Registrierungs- und Identifikationsnummer (Economic Betreiber) (EORI)."@de,
                 "The Economic Operators Registration and Identification number (EORI)."@en ;
             sh:maxCount 1 ;
-            sh:name " e o r i" ;
+            sh:name "EORI" ;
             sh:order 3 ;
             sh:path gax-trust-framework:EORI ],
         [ skos:example "'5133081508159', '3201012312340'" ;
@@ -168,7 +168,7 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
             sh:description "Die Mehrwert -Identifikationsnummer."@de,
                 "The VAT identification number."@en ;
             sh:maxCount 1 ;
-            sh:name "vat i d" ;
+            sh:name "VAT ID" ;
             sh:order 4 ;
             sh:path gax-trust-framework:vatID ],
         [ skos:example "'39120001LYGX6JEVCV44', '5299009D9BIL4D4UHT93'" ;
@@ -176,7 +176,7 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
             sh:description "Eindeutige Lei -Nummer im Sinne von https://www.gleif.org."@de,
                 "Unique LEI number as defined by https://www.gleif.org."@en ;
             sh:maxCount 1 ;
-            sh:name "lei code" ;
+            sh:name "LEI Nummer" ;
             sh:order 5 ;
             sh:path gax-trust-framework:leiCode ] ;
     sh:targetClass gax-trust-framework:RegistrationNumber .
@@ -191,7 +191,7 @@ gax-validation:AddressShape a sh:NodeShape ;
                 "Physical location of head quarter in ISO 3166-1 alpha2, alpha-3 or numeric format."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "country-name" ;
+            sh:name "Land" ;
             sh:order 1 ;
             sh:path vcard:country-name ],
         [ skos:example "'50°45'0'N 7°13'0'E', '51°3'0'N 13°45'0'E'" ;
@@ -199,28 +199,28 @@ gax-validation:AddressShape a sh:NodeShape ;
             sh:description "GPS in ISO 6709: 2008/Cor 1: 2009 Format."@de,
                 "GPS in ISO 6709:2008/Cor 1:2009 format."@en ;
             sh:maxCount 1 ;
-            sh:name "gps" ;
+            sh:name "GPS" ;
             sh:order 2 ;
             sh:path vcard:gps ],
         [ skos:example "'example-street'" ;
             sh:datatype xsd:string ;
             sh:description "Die VORSETZUNG VON V: STREET-ADRESSE IMMOTION Die Straßenadresse einer Postanschrift angibt."@de,
                 "The v:street-address property specifies the street address of a postal address."@en ;
-            sh:name "street-address" ;
+            sh:name "Straße" ;
             sh:order 3 ;
             sh:path vcard:street-address ],
         [ skos:example "'example-postal-code'" ;
             sh:datatype xsd:string ;
             sh:description "Saite einer Straßenadresse"@de,
                 "String of a street-address"@en ;
-            sh:name "postal-code" ;
+            sh:name "Postleitzahl" ;
             sh:order 4 ;
             sh:path vcard:postal-code ],
         [ skos:example "'example-locality'" ;
             sh:datatype xsd:string ;
             sh:description "Die V: Lokalitätseigentum spezifiziert die Lokalität (z. B. Stadt) einer Postanschrift."@de,
                 "The v:locality property specifies the locality (e.g., city) of a postal address."@en ;
-            sh:name "locality" ;
+            sh:name "Stadt" ;
             sh:order 5 ;
             sh:path vcard:locality ] ;
     sh:targetClass vcard:Address .
