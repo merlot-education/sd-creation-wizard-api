@@ -187,7 +187,7 @@ gax-validation:AddressShape a sh:NodeShape ;
     sh:property 
         [ skos:example "'DE', 'DEU'" ;
             sh:datatype xsd:string ;
-            sh:description "Physischer Standort des Kopfquartals in ISO 3166-1 Alpha2, Alpha-3 oder numerisches Format."@de,
+            sh:description "Physischer Standort in ISO 3166-1 Alpha2, Alpha-3 oder numerischem Format."@de,
                 "Physical location of head quarter in ISO 3166-1 alpha2, alpha-3 or numeric format."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -196,7 +196,7 @@ gax-validation:AddressShape a sh:NodeShape ;
             sh:path vcard:country-name ],
         [ skos:example "'50°45'0'N 7°13'0'E', '51°3'0'N 13°45'0'E'" ;
             sh:datatype xsd:string ;
-            sh:description "GPS in ISO 6709: 2008/Cor 1: 2009 Format."@de,
+            sh:description "GPS in ISO 6709:2008/Cor 1:2009 Format."@de,
                 "GPS in ISO 6709:2008/Cor 1:2009 format."@en ;
             sh:maxCount 1 ;
             sh:name "GPS" ;
@@ -204,21 +204,21 @@ gax-validation:AddressShape a sh:NodeShape ;
             sh:path vcard:gps ],
         [ skos:example "'example-street'" ;
             sh:datatype xsd:string ;
-            sh:description "Die VORSETZUNG VON V: STREET-ADRESSE IMMOTION Die Straßenadresse einer Postanschrift angibt."@de,
+            sh:description "Die Straßenadresse einer Postanschrift."@de,
                 "The v:street-address property specifies the street address of a postal address."@en ;
             sh:name "Straße" ;
             sh:order 3 ;
             sh:path vcard:street-address ],
         [ skos:example "'example-postal-code'" ;
             sh:datatype xsd:string ;
-            sh:description "Saite einer Straßenadresse"@de,
+            sh:description "Die Postleitzahl der Adresse"@de,
                 "String of a street-address"@en ;
             sh:name "Postleitzahl" ;
             sh:order 4 ;
             sh:path vcard:postal-code ],
         [ skos:example "'example-locality'" ;
             sh:datatype xsd:string ;
-            sh:description "Die V: Lokalitätseigentum spezifiziert die Lokalität (z. B. Stadt) einer Postanschrift."@de,
+            sh:description "Die Lokalität (z. B. Stadt) einer Postanschrift."@de,
                 "The v:locality property specifies the locality (e.g., city) of a postal address."@en ;
             sh:name "Stadt" ;
             sh:order 5 ;
