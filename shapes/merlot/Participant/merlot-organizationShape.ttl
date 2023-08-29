@@ -141,7 +141,7 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
     sh:property 
         [ skos:example "'HRA 12345', '123456789'" ;
             sh:datatype xsd:string ;
-            sh:description "Der staatlich erteilte Unternehmensnummer."@de,
+            sh:description "Die staatlich erteilte Unternehmensnummer."@de,
                 "The state issued company number."@en ;
             sh:maxCount 1 ;
             sh:name "Lokal" ;
@@ -149,7 +149,7 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
             sh:path gax-trust-framework:local ],
         [ skos:example "'DEB1234.HRB123123', 'FR1234.123456789'" ;
             sh:datatype xsd:string ;
-            sh:description "Die European Unique Identifier (EUID) für Unternehmen im Europäischen Wirtschaftsgebiet, Island, Liechtenstein oder Norwegen und registriert im Business Registers Interconnection System (BRIS).Diese Zahl finden Sie über das EU Business Registers -Portal."@de,
+            sh:description "Die European Unique Identifier (EUID) für Unternehmen im Europäischen Wirtschaftsgebiet, Island, Liechtenstein oder Norwegen und registriert im Business Registers Interconnection System (BRIS).Diese Zahl finden Sie über das EU Business Registers-Portal."@de,
                 "The European Unique Identifier (EUID) for business located in the European Economic Area, Iceland, Liechtenstein or Norway and registered in the Business Registers Interconnection System (BRIS). This number can be found via the EU Business registers portal."@en ;
             sh:maxCount 1 ;
             sh:name "EUID" ;
@@ -165,7 +165,7 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
             sh:path gax-trust-framework:EORI ],
         [ skos:example "'5133081508159', '3201012312340'" ;
             sh:datatype xsd:string ;
-            sh:description "Die Mehrwert -Identifikationsnummer."@de,
+            sh:description "Die Mehrwert-Identifikationsnummer."@de,
                 "The VAT identification number."@en ;
             sh:maxCount 1 ;
             sh:name "VAT ID" ;
@@ -173,7 +173,7 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
             sh:path gax-trust-framework:vatID ],
         [ skos:example "'39120001LYGX6JEVCV44', '5299009D9BIL4D4UHT93'" ;
             sh:datatype xsd:string ;
-            sh:description "Eindeutige Lei -Nummer im Sinne von https://www.gleif.org."@de,
+            sh:description "Eindeutige Lei-Nummer im Sinne von https://www.gleif.org."@de,
                 "Unique LEI number as defined by https://www.gleif.org."@en ;
             sh:maxCount 1 ;
             sh:name "LEI Nummer" ;
