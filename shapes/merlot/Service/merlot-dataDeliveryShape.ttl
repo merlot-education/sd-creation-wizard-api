@@ -125,7 +125,7 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:description "Eine auflösbare Verbindung zu den für diesen Dienst gelten Bedingungen."@de,
                 "a resolvable link to the Terms and Conditions applying to that service."@en ;
             sh:minCount 1 ;
-            sh:name "Anbieter AGB" ;
+            sh:name "Serviceangebotspezifische AGB" ;
             sh:node gax-validation:TermsAndConditionsShape ;
             sh:order 2 ;
             sh:path gax-trust-framework:termsAndConditions ],
@@ -137,8 +137,7 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:name "Richtlinie" ;
             sh:order 3 ;
             sh:path gax-trust-framework:policy ],        
-
-        # merlot service offering
+         # merlot service offering
         [ skos:example "'01.01.2023'" ;
             sh:datatype xsd:string ;
             sh:description "Erstelldatum"@de,
@@ -148,13 +147,6 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:name "Erstelldatum" ;
             sh:order 1 ;
             sh:path merlot:creationDate ],
-        [ skos:example "'http://example.com'" ;
-            sh:datatype xsd:string ;
-            sh:description "Anhänge"@de,
-                "Attachments"@en ;
-            sh:name "Anhänge" ;
-            sh:order 2 ;
-            sh:path merlot:attachments ],
         [ skos:example "'1€ / Download'" ;
             sh:datatype xsd:string ;
             sh:description "Beispielkosten"@de,
@@ -174,13 +166,13 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:order 6 ;
             sh:path merlot:merlotTermsAndConditionsAccepted ],
         [ skos:example "'1 hour(s)'" ;
-                sh:description "Option für eine Laufzeit des Serviceangebots"@de,
-                    "Option for a runtime of the Service Offering"@en ;
-                sh:name "Laufzeit-Option" ;
-                sh:minCount 1 ;
-                sh:node gax-validation:RuntimeShape ;
-                sh:order 4 ;
-                sh:path merlot:runtimeOption ],
+            sh:description "Option für eine Laufzeit des Serviceangebots"@de,
+                "Option for a runtime of the Service Offering"@en ;
+            sh:name "Laufzeit-Option" ;
+            sh:minCount 1 ;
+            sh:node gax-validation:RuntimeShape ;
+            sh:order 4 ;
+            sh:path merlot:runtimeOption ] ,
         # merlot data delivery offering
         [   skos:example "'up to 5'" ;
             sh:description "Option für die zulässige Anzahl von Datenübertragungen"@de,
