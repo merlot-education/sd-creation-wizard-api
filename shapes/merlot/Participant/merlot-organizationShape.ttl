@@ -165,7 +165,7 @@ gax-validation:RegistrationNumberShape a sh:NodeShape ;
             sh:path gax-trust-framework:EORI ],
         [ skos:example "'5133081508159', '3201012312340'" ;
             sh:datatype xsd:string ;
-            sh:description "Die Mehrwert-Identifikationsnummer."@de,
+            sh:description "Die Mehrwertsteuer-Identifikationsnummer."@de,
                 "The VAT identification number."@en ;
             sh:maxCount 1 ;
             sh:name "VAT ID" ;
@@ -206,6 +206,8 @@ gax-validation:AddressShape a sh:NodeShape ;
             sh:datatype xsd:string ;
             sh:description "Die Straßenadresse einer Postanschrift."@de,
                 "The v:street-address property specifies the street address of a postal address."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "Straße" ;
             sh:order 3 ;
             sh:path vcard:street-address ],
@@ -213,6 +215,8 @@ gax-validation:AddressShape a sh:NodeShape ;
             sh:datatype xsd:string ;
             sh:description "Die Postleitzahl der Adresse"@de,
                 "String of a street-address"@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "Postleitzahl" ;
             sh:order 4 ;
             sh:path vcard:postal-code ],
@@ -220,6 +224,8 @@ gax-validation:AddressShape a sh:NodeShape ;
             sh:datatype xsd:string ;
             sh:description "Die Lokalität (z. B. Stadt) einer Postanschrift."@de,
                 "The v:locality property specifies the locality (e.g., city) of a postal address."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "Stadt" ;
             sh:order 5 ;
             sh:path vcard:locality ] ;
