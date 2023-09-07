@@ -131,7 +131,7 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
             sh:name "Anbieter AGB" ;
             sh:node gax-validation:TermsAndConditionsShape ;
             sh:order 5 ;
-            sh:path gax-trust-framework:termsAndConditions ] ;
+            sh:path merlot:termsAndConditions ] ;
     sh:targetClass merlot:MerlotOrganization .
 
 # gaia-x
