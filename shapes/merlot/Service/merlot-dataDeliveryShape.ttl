@@ -204,7 +204,7 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:datatype xsd:string ;
             sh:description "Datenzugriffsart"@de,
                 "Data Access Type"@en ;
-            sh:in ( "Download" "Compute to data" ) ;
+            sh:in ( "Download" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Datenzugriffsart" ;
