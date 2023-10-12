@@ -14,51 +14,15 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
 	sh:ignoredProperties ( rdf:type ) ;
     sh:property 
         # gaia-x
-        [ skos:example "'GDPR2016', 'LGPD2019'" ;
+    	[ skos:example "'GenericServiceName'" ;
             sh:datatype xsd:string ;
-            sh:description "Eine Liste von Datenschutzregime aus der unten verfügbaren Liste"@de,
-                "a list of data protection regime from the list available below"@en ;
-            sh:name "Datenschutzrichtlinie" ;
-            sh:order 4 ;
-            sh:path gax-trust-framework:dataProtectionRegime ],
-        [ skos:example "' '" ;
-            sh:description "Eine Liste von Methoden zum Exportieren von Daten aus dem Dienst"@de,
-                "a list of methods to export data out of the service"@en ;
+            sh:description "Menschenlesbarer Name des Service Angebots"@de,
+                "human readable name of the service offering"@en ;
+            sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "Datenexportmethode" ;
-            sh:node gax-validation:DataAccountExportShape ;
-            sh:order 5 ;
-            sh:path gax-trust-framework:dataAccountExport ],
-        [ skos:example "'An ML service for training, deploying and improving image classifiers.'" ;
-            sh:datatype xsd:string ;
-            sh:description "Beschreibung des Service Angebots in natürlicher Sprache"@de,
-                "A description in natural language"@en ;
-            sh:maxCount 1 ;
-            sh:name "Detaillierte Beschreibung des Services" ;
-            sh:order 6 ;
-            sh:path dct:description ],
-        [ skos:example "'ML', 'Classification'" ;
-            sh:datatype xsd:string ;
-            sh:description "Schlüsselwörter, die den Dienst beschreiben / markieren."@de,
-                "Keywords that describe / tag the service."@en ;
-            sh:name "Schlagwort" ;
-            sh:order 7 ;
-            sh:path dcat:keyword ],
-        [ skos:example "'Hybrid', 'gax:PrivateProvisioning'" ;
-            sh:datatype xsd:string ;
-            sh:description "Bereitstellungsart des Dienstes"@de,
-                "Provision type of the service"@en ;
-            sh:maxCount 1 ;
-            sh:name "Bereitstellungstyp" ;
-            sh:order 8 ;
-            sh:path gax-trust-framework:provisionType ],
-        [ skos:example "'(reference to endpoint)'" ;
-            sh:description "Endpunkt, auf den das Serviceangebot zugegriffen werden kann"@de,
-                "Endpoint through which the Service Offering can be accessed"@en ;
-            sh:name "Zugriffsendpunkt" ;
-            sh:node gax-validation:EndpointShape ;
-            sh:order 9 ;
-            sh:path gax-trust-framework:endpoint ],
+            sh:name "Servicename" ;
+            sh:order 1 ;
+            sh:path gax-trust-framework:name ],
         [ skos:example "'https://gaia-x.eu'" ;
             sh:description "Teilnehmer, der dieses Service Angebot bereitstellt."@de,
                 "Id of Participant (self-descrription) providing this service offering."@en ;
@@ -66,8 +30,70 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "Service Bereitsteller" ;
             sh:nodeKind sh:IRI ;
-            sh:order 10 ;
+            sh:order 2 ;
             sh:path gax-trust-framework:providedBy ],
+        [ skos:example "'https://gaia-x.eu'" ;
+            sh:description "Telinehmer, der dieses Service Angebot veröffentlicht."@de,
+                "DID of participant self-descrription, who is offering this service offering."@en ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Service Anbieter" ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path gax-core:offeredBy ],
+        [ skos:example "'An ML service for training, deploying and improving image classifiers.'" ;
+            sh:datatype xsd:string ;
+            sh:description "Beschreibung des Service Angebots in natürlicher Sprache"@de,
+                "A description in natural language"@en ;
+            sh:maxCount 1 ;
+            sh:name "Detaillierte Beschreibung des Services" ;
+            sh:order 4 ;
+            sh:path dct:description ],
+        [ skos:example "'https://gaia-x.eu'" ;
+            sh:description "Eine auflösbare Verbindung zu den für diesen Dienst gelten Bedingungen."@de,
+                "a resolvable link to the Terms and Conditions applying to that service."@en ;
+            sh:minCount 1 ;
+            sh:name "Serviceangebotspezifische Geschäftsbedingungen" ;
+            sh:node gax-validation:TermsAndConditionsShape ;
+            sh:order 5 ;
+            sh:path gax-trust-framework:termsAndConditions ],
+        [ skos:example "'GDPR2016', 'LGPD2019'" ;
+            sh:datatype xsd:string ;
+            sh:description "Eine Liste von Datenschutzregime aus der unten verfügbaren Liste"@de,
+                "a list of data protection regime from the list available below"@en ;
+            sh:name "Datenschutzrichtlinie" ;
+            sh:order 6 ;
+            sh:path gax-trust-framework:dataProtectionRegime ],
+        [ skos:example "' '" ;
+            sh:description "Eine Liste von Methoden zum Exportieren von Daten aus dem Dienst"@de,
+                "a list of methods to export data out of the service"@en ;
+            sh:minCount 1 ;
+            sh:name "Datenexportmethode" ;
+            sh:node gax-validation:DataAccountExportShape ;
+            sh:order 7 ;
+            sh:path gax-trust-framework:dataAccountExport ],
+        [ skos:example "'ML', 'Classification'" ;
+            sh:datatype xsd:string ;
+            sh:description "Schlüsselwörter, die den Dienst beschreiben / markieren."@de,
+                "Keywords that describe / tag the service."@en ;
+            sh:name "Schlagwort" ;
+            sh:order 8 ;
+            sh:path dcat:keyword ],
+        [ skos:example "'Hybrid', 'gax:PrivateProvisioning'" ;
+            sh:datatype xsd:string ;
+            sh:description "Bereitstellungsart des Dienstes"@de,
+                "Provision type of the service"@en ;
+            sh:maxCount 1 ;
+            sh:name "Bereitstellungstyp" ;
+            sh:order 9 ;
+            sh:path gax-trust-framework:provisionType ],
+        [ skos:example "'(reference to endpoint)'" ;
+            sh:description "Endpunkt, auf den das Serviceangebot zugegriffen werden kann"@de,
+                "Endpoint through which the Service Offering can be accessed"@en ;
+            sh:name "Zugriffsendpunkt" ;
+            sh:node gax-validation:EndpointShape ;
+            sh:order 10 ;
+            sh:path gax-trust-framework:endpoint ],
         [ skos:example "'https://gaia-x.eu'" ;
             sh:description "ID der Ressourcen (Selbstdeskrimpfung) im Zusammenhang mit dem Dienst und das kann unabhängig davon existieren."@de,
                 "Id of Resource (self-descrription) related to the service and that can exist independently of it."@en ;
@@ -90,55 +116,45 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:order 13 ;
             sh:path gax-trust-framework:ServiceOfferingLocations ],
         [ skos:example "'https://gaia-x.eu'" ;
-            sh:description "Telinehmer, der dieses Service Angebot veröffentlicht."@de,
-                "DID of participant self-descrription, who is offering this service offering."@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Service Anbieter" ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path gax-core:offeredBy ],
-        [ skos:example "'https://gaia-x.eu'" ;
             sh:description "Habe die Ressourcen-Selbstbeschreibung im Zusammenhang mit dem Dienst getan, und das kann unabhängig davon existieren."@de,
                 "DID of resource self-escription related to the service and that can exist independently of it."@en ;
             sh:name "Gruppierung" ;
             sh:nodeKind sh:IRI ;
-            sh:order 2 ;
+            sh:order 14 ;
             sh:path gax-core:aggregationOf ],
         [ skos:example "'https://gaia-x.eu'" ;
             sh:description "Hat von dem Dienst, der Selbstbeschreibung im Zusammenhang mit dem Dienst anbietet, und das kann unabhängig davon existieren."@de,
                 "DID of the service offering self-description related to the service and that can exist independently of it."@en ;
             sh:name "Abhängigkeit" ;
             sh:nodeKind sh:IRI ;
-            sh:order 3 ;
+            sh:order 15 ;
             sh:path gax-core:dependsOn ],
-    	[ skos:example "'GenericServiceName'" ;
-            sh:datatype xsd:string ;
-            sh:description "Menschenlesbarer Name des Service Angebots"@de,
-                "human readable name of the service offering"@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Servicename" ;
-            sh:order 1 ;
-            sh:path gax-trust-framework:name ],
-        [ skos:example "'https://gaia-x.eu'" ;
-            sh:description "Eine auflösbare Verbindung zu den für diesen Dienst gelten Bedingungen."@de,
-                "a resolvable link to the Terms and Conditions applying to that service."@en ;
-            sh:minCount 1 ;
-            sh:name "Anbieter AGB" ;
-            sh:node gax-validation:TermsAndConditionsShape ;
-            sh:order 2 ;
-            sh:path gax-trust-framework:termsAndConditions ],
         [ skos:example "' '" ;
             sh:datatype xsd:string ;
             sh:description "Eine Liste der Richtlinien, die unter Verwendung eines DSL (z. B. Rego oder ODRL) ausgedrückt wurden"@de,
                 "a list of policy expressed using a DSL (e.g., Rego or ODRL)"@en ;
             sh:minCount 1 ;
             sh:name "Richtlinie" ;
-            sh:order 3 ;
+            sh:order 16 ;
             sh:path gax-trust-framework:policy ],        
 
         # merlot service offering
+        [ skos:example "'1€ / Download'" ;
+            sh:datatype xsd:string ;
+            sh:description "Beispielkosten"@de,
+                "Example Costs"@en ;
+            sh:maxCount 1 ;
+            sh:name "Beispielkosten" ;
+            sh:order 101 ;
+            sh:path merlot:exampleCosts ],
+        [ skos:example "'1 hour(s)'" ;
+            sh:description "Option für eine Laufzeit des Serviceangebots"@de,
+                "Option for a runtime of the Service Offering"@en ;
+            sh:name "Laufzeit-Option" ;
+            sh:minCount 1 ;
+            sh:node gax-validation:RuntimeShape ;
+            sh:order 199 ;
+            sh:path merlot:runtimeOption ],
         [ skos:example "'01.01.2023'" ;
             sh:datatype xsd:string ;
             sh:description "Erstelldatum"@de,
@@ -146,23 +162,8 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Erstelldatum" ;
-            sh:order 1 ;
+            sh:order 998 ;
             sh:path merlot:creationDate ],
-        [ skos:example "'http://example.com'" ;
-            sh:datatype xsd:string ;
-            sh:description "Anhänge"@de,
-                "Attachments"@en ;
-            sh:name "Anhänge" ;
-            sh:order 2 ;
-            sh:path merlot:attachments ],
-        [ skos:example "'1€ / Download'" ;
-            sh:datatype xsd:string ;
-            sh:description "Beispielkosten"@de,
-                "Example Costs"@en ;
-            sh:maxCount 1 ;
-            sh:name "Beispielkosten" ;
-            sh:order 3 ;
-            sh:path merlot:exampleCosts ],
         [ skos:example "'true'" ;
             sh:datatype xsd:boolean ;
             sh:description "Merlot Geschäftsbedingungen wurden gelesen und akzeptiert"@de,
@@ -171,25 +172,9 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:minCount 1 ;
 			sh:hasValue true ;
             sh:name "Merlot AGB akzeptieren" ;
-            sh:order 6 ;
+            sh:order 999 ;
             sh:path merlot:merlotTermsAndConditionsAccepted ],
-        [ skos:example "'1 hour(s)'" ;
-                sh:description "Option für eine Laufzeit des Serviceangebots"@de,
-                    "Option for a runtime of the Service Offering"@en ;
-                sh:name "Laufzeit-Option" ;
-                sh:minCount 1 ;
-                sh:node gax-validation:RuntimeShape ;
-                sh:order 4 ;
-                sh:path merlot:runtimeOption ],
         # merlot data delivery offering
-        [   skos:example "'up to 5'" ;
-            sh:description "Option für die zulässige Anzahl von Datenübertragungen"@de,
-                "Option for allowed count of data exchanges"@en ;
-            sh:name "Datenaustauschanzahl-Option" ;
-            sh:node gax-validation:DataExchangeCountShape ;
-            sh:minCount 1 ;
-            sh:order 1 ;
-            sh:path merlot:exchangeCountOption ],
         [ skos:example "'Push'" ;
             sh:datatype xsd:string ;
             sh:description "Art der Datenübertragung"@de,
@@ -198,7 +183,7 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Datentransferart" ;
-            sh:order 3 ;
+            sh:order 102 ;
             sh:path merlot:dataTransferType ],
         [ skos:example "'Download'" ;
             sh:datatype xsd:string ;
@@ -208,8 +193,16 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Datenzugriffsart" ;
-            sh:order 4 ;
-            sh:path merlot:dataAccessType ] ;
+            sh:order 103 ;
+            sh:path merlot:dataAccessType ],
+        [   skos:example "'up to 5'" ;
+            sh:description "Option für die zulässige Anzahl von Datenübertragungen"@de,
+                "Option for allowed count of data exchanges"@en ;
+            sh:name "Datenaustauschanzahl-Option" ;
+            sh:node gax-validation:DataExchangeCountShape ;
+            sh:minCount 1 ;
+            sh:order 198 ;
+            sh:path merlot:exchangeCountOption ] ;
     sh:targetClass merlot:MerlotServiceOfferingDataDelivery .
 
 # gaia-x
