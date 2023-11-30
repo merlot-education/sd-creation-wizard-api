@@ -114,15 +114,6 @@ gax-validation:MerlotOrganizationShape a sh:NodeShape ;
             sh:name "Mail-Adresse" ;
             sh:order 103 ;
             sh:path merlot:mailAddress ],
-        [ skos:example "'BE-BRU'" ;
-            sh:datatype xsd:string ;
-            sh:description "Adresscode."@de,
-                "Address Code."@en ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Adresscode" ;
-            sh:order 104 ;
-            sh:path merlot:addressCode ],
         [ skos:example "'https://gaia-x.eu'" ;
             sh:description "Eine auflösbare Verbindung zu den für diesen Dienst gelten Bedingungen."@de,
                 "a resolvable link to the Terms and Conditions applying to that service."@en ;
