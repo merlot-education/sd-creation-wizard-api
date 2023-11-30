@@ -298,7 +298,7 @@ gax-validation:RuntimeShape a sh:NodeShape ;
 	sh:ignoredProperties ( rdf:type ) ;
     sh:property 
         [ skos:example "'5'" ;
-            sh:datatype xsd:number ;
+            sh:datatype xsd:integer ;
             sh:minInclusive 0 ;
             sh:description "Anzahl-Teil der Laufzeit. Auf 0 setzen für 'unbegrenzt'."@de,
                 "Number part of the runtime. Set to 0 for 'unlimited'."@en ;
