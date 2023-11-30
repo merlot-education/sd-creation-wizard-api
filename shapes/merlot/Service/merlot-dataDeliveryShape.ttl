@@ -33,7 +33,7 @@ gax-validation:MerlotServiceOfferingDataDeliveryShape a sh:NodeShape ;
             sh:order 2 ;
             sh:path gax-trust-framework:providedBy ],
         [ skos:example "'https://gaia-x.eu'" ;
-            sh:description "Telinehmer, der dieses Service Angebot veröffentlicht."@de,
+            sh:description "Teilnehmer, der dieses Service Angebot veröffentlicht."@de,
                 "DID of participant self-descrription, who is offering this service offering."@en ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -328,6 +328,7 @@ gax-validation:RuntimeShape a sh:NodeShape ;
     sh:property 
         [ skos:example "'5'" ;
             sh:datatype xsd:number ;
+            sh:minInclusive 0 ;
             sh:description "Anzahl-Teil der Laufzeit. Auf 0 setzen für 'unbegrenzt'."@de,
                 "Number part of the runtime. Set to 0 for 'unlimited'."@en ;
             sh:maxCount 1 ;
@@ -354,6 +355,7 @@ gax-validation:DataExchangeCountShape a sh:NodeShape ;
     sh:property 
         [ skos:example "'5'" ;
             sh:datatype xsd:number ;
+            sh:minInclusive 0 ;
             sh:description "Maximal zulässige Anzahl an Datenaustauschen. Auf 0 setzen für 'unbegrenzt'."@de,
                 "Number of data exchanges up to which the transfer is allowed. Set to 0 for 'unlimited'."@en ;
             sh:maxCount 1 ;
